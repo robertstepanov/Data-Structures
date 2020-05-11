@@ -63,3 +63,14 @@ class LinkedList:
             # update self.head
             self.head = self.head.get_next()
             return value
+
+    def remove_from_tail(self):
+        current = self.head
+
+        if not current:
+            return None
+        else:
+            while current.get_next() is not None:
+                current = current.get_next()
+                value = current.get_value()
+                return value
