@@ -25,13 +25,13 @@ class LinkedList:
 
     def add_to_head(self, value):
         new_node = Node(value)
-        self.length += 1
+        # self.length += 1
         if not self.head and not self.tail:
             self.head = new_node
             self.tail = new_node
         else:
             new_node.next = self.head
-            self.head.prev = new_node
+            self.head.prev = new_node # buggy here
             self.head = new_node
 
     def add_to_end(self, value):
@@ -74,3 +74,15 @@ class LinkedList:
                 current = current.get_next()
                 value = current.get_value()
                 return value
+
+#     def print_ll_elements(self):
+#         current = self.head
+
+#         while current is not None:
+#             print(current.value)
+#             current = current.get_next()
+
+# ll = LinkedList()
+# ll.add_to_head(3)
+# ll.add_to_head(9)
+# ll.print_ll_elements()
